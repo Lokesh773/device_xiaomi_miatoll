@@ -3,3 +3,17 @@
 /vendor/bin/batterysecret		u:object_r:batterysecret_exec:s0
 /mnt/vendor/persist/subsys(/.*)?                u:object_r:persist_subsys_file:s0
 
+# KCAL
+/sys/devices/platform/kcal_ctrl.0(/.*)?                      u:object_r:kcal_dev:s0
+/sys/bus/platform/drivers/kcal_ctrl(/.*)?                    u:object_r:kcal_dev:s0
+
+# Backlight
+/sys/module/mdss_fb/parameters/backlight_dimmer                               u:object_r:sysfs_backlight:s0
+
+# Torch brightness control
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:torch_0/max_brightness     u:object_r:sysfs_tbrightness:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:torch_1/max_brightness     u:object_r:sysfs_tbrightness:s0
+
+# FPS Info
+/sys/kernel/debug/dri/0/crtc97/fps                              u:object_r:sysfs_fps:s0
+

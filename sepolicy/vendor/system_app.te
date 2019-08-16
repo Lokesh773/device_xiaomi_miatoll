@@ -1,0 +1,16 @@
+# KCAL
+allow system_app kcal_dev:file rw_file_perms;
+allow system_app kcal_dev:dir search;
+
+# Torch Brightness
+allow system_app sysfs_leds:dir search;
+allow system_app sysfs_tbrightness:file { open getattr write };
+
+# Backlight Dimmer
+allow system_app sysfs_backlight:file { open read getattr write };
+
+# USB Fastcharge
+allow system_app sysfs_fcharge:file { open read getattr write };
+
+# FPS Info
+allow system_app sysfs_fps:file rw_file_perms;

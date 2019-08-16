@@ -313,3 +313,9 @@ PRODUCT_BOOT_JARS += \
 # Doze
 PRODUCT_PACKAGES += \
     ParanoidDoze
+
+# XiaomiParts
+PRODUCT_PACKAGES += \
+    XiaomiParts \
+    init.xiaomiparts.rc \
+    init.xiaomiparts.sh

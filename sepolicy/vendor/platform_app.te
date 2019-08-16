@@ -1,0 +1,5 @@
+# Torch Brightness
+allow platform_app sysfs_leds:dir search;
+
+# FPS Info
+allow platform_app sysfs_fps:file { getattr open read };

@@ -1,0 +1,36 @@
+on boot
+
+# KCAL permissions
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_enable
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_cont
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_sat
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_hue
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_min
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_val
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_enable
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_cont
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_sat
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_hue
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_min
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_val
+
+# Torch Brightness permissions
+  chmod 0660 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:torch_0/max_brightness 
+  chmod 0660 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:torch_1/max_brightness
+  chown system system /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:torch_0/max_brightness
+  chown system system /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:torch_1/max_brightness
+
+# USB Fastcharge permissions
+  chown system system /sys/kernel/fast_charge/force_fast_charge
+  chmod 0660 /sys/kernel/fast_charge/force_fast_charge
+
+# Backlight Dimmer permissions
+  chown system system /sys/module/mdss_fb/parameters/backlight_dimmer
+  chmod 0660 /sys/module/mdss_fb/parameters/backlight_dimmer
+
+# FPS Info permissions
+  chown system graphics /sys/kernel/debug/dri/0/crtc97/fps
+  chmod 0666 /sys/kernel/debug/dri/0/crtc97/fps
+
