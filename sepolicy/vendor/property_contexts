@@ -1,2 +1,5 @@
 # Dirac
 persist.audio.dirac                             u:object_r:dirac_prop:s0
+
+# Boost
+persist.zenparts.gpu_profile                    u:object_r:boosts_prop:s0

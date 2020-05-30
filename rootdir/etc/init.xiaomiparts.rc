@@ -44,3 +44,43 @@ on boot
   chmod 0660 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/white/max_brightness
   chmod 0660 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/white/brightness
 
+# GPU Boost based on ronax's MayhemParts
+    chown system system /sys/devices/platform/soc/5000000.qcom,kgsl-3d0/devfreq/5000000.qcom,kgsl-3d0/adrenoboost
+    chmod 0644 /sys/devices/platform/soc/5000000.qcom,kgsl-3d0/devfreq/5000000.qcom,kgsl-3d0/adrenoboost
+
+    # Enable gpu boost support
+    setprop gpuboost.support 1
+
+    # Run xiaomiparts script to initialize boost props
+    exec u:r:init:s0 root root -- /vendor/bin/init.xiaomiparts.sh
+    exec u:r:su:s0 root root -- /vendor/bin/init.xiaomiparts.sh
+
+# GPU-Disable (default profile)
+on property:persist.zenparts.gpu_profile=0
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 0
+    write /sys/module/adreno_idler/parameters/adreno_idler_active "Y"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload "10000" 
+    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential "35"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait "25"
+
+# GPU-Low
+on property:persist.zenparts.gpu_profile=1
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 1
+    write /sys/module/adreno_idler/parameters/adreno_idler_active "Y"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload "6000" 
+    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential "15"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait "25"
+
+# GPU-Medium
+on property:persist.zenparts.gpu_profile=2
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 2
+    write /sys/module/adreno_idler/parameters/adreno_idler_active "Y"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload "5000" 
+    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential "15"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait "15"
+
+# GPU-High
+on property:persist.zenparts.gpu_profile=3
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 3
+    write /sys/module/adreno_idler/parameters/adreno_idler_active "N"
+

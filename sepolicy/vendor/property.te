@@ -1,2 +1,5 @@
 # Dirac
 type dirac_prop, property_type;
+
+# Boost
+type boosts_prop, property_type;
