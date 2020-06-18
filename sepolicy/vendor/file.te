@@ -12,3 +12,6 @@ type sysfs_tbrightness, sysfs_type, fs_type;
 
 # FPS Info
 type sysfs_fps, sysfs_type, fs_type;
+
+# Touchboost
+type sysfs_touchboost, sysfs_type, fs_type;
