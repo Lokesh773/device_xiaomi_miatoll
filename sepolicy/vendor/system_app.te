@@ -17,3 +17,7 @@ allow system_app sysfs_fps:file rw_file_perms;
 
 # Touchboost
 allow system_app sysfs_touchboost:file { open read getattr write };
+
+# Notification LED
+allow system_app sysfs_graphics:dir search;
+allow system_app sysfs_graphics:file rw_file_perms;

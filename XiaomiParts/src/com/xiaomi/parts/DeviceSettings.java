@@ -34,6 +34,7 @@ import com.xiaomi.parts.speaker.ClearSpeakerActivity;
 import com.xiaomi.parts.preferences.CustomSeekBarPreference;
 import com.xiaomi.parts.preferences.SecureSettingListPreference;
 import com.xiaomi.parts.preferences.SecureSettingSwitchPreference;
+import com.xiaomi.parts.preferences.NotificationLedSeekBarPreference;
 
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -66,6 +67,10 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String PREF_MSM_TOUCHBOOST = "touchboost";
     public static final String MSM_TOUCHBOOST_PATH = "/sys/module/msm_performance/parameters/touchboost";
 
+    public static final String CATEGORY_NOTIF = "notification_led";
+    public static final String PREF_NOTIF_LED = "notification_led_brightness";
+    public static final String NOTIF_LED_PATH = "/sys/class/leds/white/max_brightness";
+
     private CustomSeekBarPreference mTorchBrightness;
     private Preference mKcal;
     private Preference mClearSpeakerPref;
@@ -85,6 +90,13 @@ public class DeviceSettings extends PreferenceFragment implements
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
 
         String device = FileUtils.getStringProp("ro.build.product", "unknown");
+
+        if (FileUtils.fileWritable(NOTIF_LED_PATH)) {
+            NotificationLedSeekBarPreference notifLedBrightness =
+                    (NotificationLedSeekBarPreference) findPreference(PREF_NOTIF_LED);
+            notifLedBrightness.setOnPreferenceChangeListener(this);
+        } else { getPreferenceScreen().removePreference(findPreference(CATEGORY_NOTIF)); }
+
 
         mTorchBrightness = (CustomSeekBarPreference) findPreference(PREF_TORCH_BRIGHTNESS);
         mTorchBrightness.setEnabled(FileUtils.fileWritable(TORCH_1_BRIGHTNESS_PATH) &&
@@ -219,6 +231,11 @@ public class DeviceSettings extends PreferenceFragment implements
                     this.getContext().stopService(fpsinfo);
                 }
                 break;
+
+            case PREF_NOTIF_LED:
+                FileUtils.setValue(NOTIF_LED_PATH, (int) value);
+                break;
+
             default:
                 break;
         }
