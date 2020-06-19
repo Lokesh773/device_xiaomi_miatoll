@@ -71,6 +71,9 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String PREF_NOTIF_LED = "notification_led_brightness";
     public static final String NOTIF_LED_PATH = "/sys/class/leds/white/max_brightness";
 
+    public static final int MIN_LED = 1;
+    public static final int MAX_LED = 255;
+
     private CustomSeekBarPreference mTorchBrightness;
     private Preference mKcal;
     private Preference mClearSpeakerPref;
@@ -233,7 +236,7 @@ public class DeviceSettings extends PreferenceFragment implements
                 break;
 
             case PREF_NOTIF_LED:
-                FileUtils.setValue(NOTIF_LED_PATH, (int) value);
+                FileUtils.setValue(NOTIF_LED_PATH, (int) value / 100.0 * (MAX_LED - MIN_LED) + MIN_LED);
                 break;
 
             default:

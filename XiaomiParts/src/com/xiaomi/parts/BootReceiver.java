@@ -69,7 +69,7 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                         DeviceSettings.PREF_TORCH_BRIGHTNESS, 100));
         FileUtils.setValue(DeviceSettings.NOTIF_LED_PATH,
                 Settings.Secure.getInt(context.getContentResolver(),
-                        DeviceSettings.PREF_NOTIF_LED, 255));
+                        DeviceSettings.PREF_NOTIF_LED, 100) / 100.0 * (DeviceSettings.MAX_LED - DeviceSettings.MIN_LED) + DeviceSettings.MIN_LED);
         FileUtils.setValue(DeviceSettings.USB_FASTCHARGE_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_USB_FASTCHARGE, 0));
         FileUtils.setValue(DeviceSettings.MSM_TOUCHBOOST_PATH, Settings.Secure.getInt(context.getContentResolver(),
