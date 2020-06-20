@@ -91,6 +91,7 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String GPUBOOST_SYSTEM_PROPERTY = "persist.xiaomiparts.gpu_profile";
 
     private CustomSeekBarPreference mTorchBrightness;
+    private NotificationLedSeekBarPreference mLEDBrightness;
     private Preference mKcal;
     private Preference mClearSpeakerPref;
     private Preference mAmbientPref;
@@ -114,12 +115,9 @@ public class DeviceSettings extends PreferenceFragment implements
 
         String device = FileUtils.getStringProp("ro.build.product", "unknown");
 
-        if (FileUtils.fileWritable(NOTIF_LED_PATH)) {
-            NotificationLedSeekBarPreference notifLedBrightness =
-                    (NotificationLedSeekBarPreference) findPreference(PREF_NOTIF_LED);
-            notifLedBrightness.setOnPreferenceChangeListener(this);
-        } else { getPreferenceScreen().removePreference(findPreference(CATEGORY_NOTIF)); }
-
+        mLEDBrightness = (NotificationLedSeekBarPreference) findPreference(PREF_NOTIF_LED);
+        mLEDBrightness.setEnabled(FileUtils.fileWritable(NOTIF_LED_PATH));
+        mLEDBrightness.setOnPreferenceChangeListener(this);
 
         mTorchBrightness = (CustomSeekBarPreference) findPreference(PREF_TORCH_BRIGHTNESS);
         mTorchBrightness.setEnabled(FileUtils.fileWritable(TORCH_1_BRIGHTNESS_PATH) &&
