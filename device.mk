@@ -134,7 +134,7 @@ PRODUCT_COPY_FILES += \
 
 # Light
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.xiaomi_sm6250
+    android.hardware.light@2.0-service.xiaomi_miatoll
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -195,7 +195,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.xiaomi_sm6250
+    android.hardware.power@1.3-service.xiaomi_miatoll
 
 # RCS
 PRODUCT_PACKAGES += \
