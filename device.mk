@@ -206,7 +206,9 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.xiaomi_miatoll
+    android.hardware.power@1.3-service.xiaomi_miatoll \
+	android.hardware.power.stats@1.0-service.xiaomi_miatoll
+
 
 # Additional native libraries
 # See https://source.android.com/devices/tech/config/namespaces_libraries
@@ -237,7 +239,8 @@ PRODUCT_COPY_FILES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/google/pixel
 
 # Telephony
 PRODUCT_PACKAGES += \
