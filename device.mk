@@ -204,6 +204,9 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.power@1.3-service.xiaomi_miatoll
 
+# privapp
+PRODUCT_PROPERTY_OVERRIDES += ro.control_privapp_permissions=log
+
 # RCS
 PRODUCT_PACKAGES += \
     rcs_service_aidl \

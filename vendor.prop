@@ -193,9 +193,6 @@ vendor.power.pasr.enabled=true
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
-# Priv-app permissions
-ro.control_privapp_permissions=enforce
-
 # Radio
 DEVICE_PROVISIONED=1
 persist.data.df.dev_name=rmnet_usb0
