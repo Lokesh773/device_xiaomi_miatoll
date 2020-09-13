@@ -100,6 +100,8 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/gps/android.hardware.gnss@2.0-service-qti.xml
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/gps/vendor.qti.gnss@3.0-service.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
 ODM_MANIFEST_SKUS += \
