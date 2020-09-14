@@ -20,6 +20,10 @@ cc_library_static {
     srcs: ["init_miatoll.cpp"],
     include_dirs: [
         "system/core/base/include",
-        "system/core/init"
-    ]
+        "system/core/init",
+    ],
+    shared_libs: [
+        "libbase",
+    ],
 }
+
