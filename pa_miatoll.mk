@@ -5,9 +5,9 @@
 #
 
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/pa/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_miatoll
+PRODUCT_NAME := pa_miatoll
 PRODUCT_DEVICE := miatoll
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := SM6250
