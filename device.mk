@@ -63,6 +63,11 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
+# Doze
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sensor.proximity=true \
+    ro.sensor.pickup=android.sensor.tilt_detector
+
 # Camera
 PRODUCT_PACKAGES += \
     Snap
@@ -303,3 +308,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
+
+# Doze
+PRODUCT_PACKAGES += \
+    ParanoidDoze
