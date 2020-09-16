@@ -39,7 +39,7 @@ vendor/lib64/camera/com.qti.tuned.sunny_ov32a1q.bin|e3c8cb221d8bbfd82f81063dbff1
 # DPM
 product/bin/dpmd
 product/etc/dpm/dpm.conf
-product/etc/init/dpmd.rc
+#product/etc/init/dpmd.rc
 product/etc/permissions/com.qti.dpmframework.xml
 product/etc/permissions/dpmapi.xml
 product/framework/com.qti.dpmframework.jar
