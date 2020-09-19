@@ -209,7 +209,11 @@ WIFI_HIDL_FEATURE_AWARE := true
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+# ANXCamera
+-include vendor/aeonax/ANXCamera/BoardConfigAnx.mk
+
 # Inherit proprietary blobs
 -include vendor/xiaomi/miatoll/BoardConfigVendor.mk
+
 
  

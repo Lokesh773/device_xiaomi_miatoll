@@ -10,6 +10,9 @@ $(call inherit-product-if-exists, vendor/xiaomi/miatoll/miatoll-vendor.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# ANXCamera
+$(call inherit-product, vendor/aeonax/ANXCamera/anx-vendor.mk)
+
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
