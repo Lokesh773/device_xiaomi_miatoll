@@ -319,3 +319,6 @@ PRODUCT_PACKAGES += \
     XiaomiParts \
     init.xiaomiparts.rc \
     init.xiaomiparts.sh
+# Dirac
+PRODUCT_PACKAGES += \
+    Dirac
