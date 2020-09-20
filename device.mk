@@ -195,10 +195,6 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.xiaomi_miatoll
-
 # RCS
 PRODUCT_PACKAGES += \
     rcs_service_aidl \
