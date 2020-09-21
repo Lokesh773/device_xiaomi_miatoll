@@ -128,6 +128,9 @@ ODM_MANIFEST_JOYEUSE_FILES := $(DEVICE_PATH)/manifest_joyeuse.xml
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_miatoll
 TARGET_RECOVERY_DEVICE_MODULES := libinit_miatoll
 
+# Power
+TARGET_USES_INTERACTION_BOOST := true
+
 # Media
 TARGET_USES_ION := true
 TARGET_DISABLED_UBWC := true
