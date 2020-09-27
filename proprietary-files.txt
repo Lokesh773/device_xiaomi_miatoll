@@ -267,7 +267,6 @@ vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/bin/hw/android.hardware.camera.provider@2.4-service_64
 vendor/bin/hw/android.hardware.configstore@1.1-service
 vendor/bin/hw/android.hardware.drm@1.0-service
-vendor/bin/hw/android.hardware.drm@1.2-service.widevine
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
 vendor/bin/hw/android.hardware.gnss@2.0-service-qti
 vendor/bin/hw/android.hardware.graphics.composer@2.3-service
@@ -426,7 +425,6 @@ vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/etc/init/android.hardware.camera.provider@2.4-service_64.rc
 vendor/etc/init/android.hardware.configstore@1.1-service.rc
 vendor/etc/init/android.hardware.drm@1.0-service.rc
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/etc/init/android.hardware.gnss@2.0-service-qti.rc
 vendor/etc/init/android.hardware.graphics.composer@2.3-service.rc
@@ -1049,7 +1047,6 @@ vendor/lib/libvpx.so
 vendor/lib/libwebrtc_audio_preprocessing.so
 vendor/lib/libwms.so
 vendor/lib/libwqe.so
-vendor/lib/libwvhidl.so
 vendor/lib/libwvkeybox.so
 vendor/lib/libXMFD_AgeGender.so
 vendor/lib/libxml.so
@@ -1848,3 +1845,8 @@ vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql
 vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql
 vendor/radio/qcril_database/upgrade/4_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/5_version_update_ecc_table.sql
+
+# Widevine - from sunfish RP1A.200720.010
+vendor/bin/hw/android.hardware.drm@1.3-service.widevine|75103a18355966370895526dc9afb6adff4b755b
+vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc|c35e1a6f9a6faff19064a81e07c4be82ceaf4bb5
+vendor/lib64/libwvhidl.so|68d257f6c4b409f71f80c231789d9951f71308a8
