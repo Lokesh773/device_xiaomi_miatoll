@@ -7,6 +7,8 @@
 DEVICE_PATH := device/xiaomi/miatoll
 
 BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES := true
+
 
 # Architecture
 TARGET_ARCH := arm64
