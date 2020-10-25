@@ -64,6 +64,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_megvii
 
+PRODUCT_PACKAGES += \
+    libgui_vendor
+
 # Doze
 PRODUCT_PACKAGES += \
     XiaomiDoze
