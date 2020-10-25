@@ -821,11 +821,6 @@ vendor/etc/SVIConfig.xml
 vendor/etc/system_properties.xml
 vendor/etc/thermal-engine.conf
 vendor/etc/usb_audio_policy_configuration.xml
-vendor/etc/vintf/compatibility_matrix.xml
-vendor/etc/vintf/manifest/android.hardware.atrace@1.0-service.xml
-vendor/etc/vintf/manifest/android.hardware.cas@1.1-service.xml
-vendor/etc/vintf/manifest/android.hardware.gnss@2.0-service-qti.xml
-vendor/etc/vintf/manifest/vendor.qti.gnss@3.0-service.xml
 vendor/etc/wifi/aoa_cldb_falcon.bin
 vendor/etc/wifi/aoa_cldb_swl14.bin
 vendor/etc/wifi/fstman.ini
