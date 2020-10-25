@@ -722,7 +722,6 @@ vendor/etc/permissions/vendor-qti-hardware-sensorscalibrate.xml
 vendor/etc/permissions/vendor.qti.hardware.factory.xml
 vendor/etc/PinkNoise.wav
 vendor/etc/pm_test_item_config.xml
-vendor/etc/public.libraries.txt
 vendor/etc/pushfiles.sh
 vendor/etc/qc.xml
 vendor/etc/qc_GCF.xml
