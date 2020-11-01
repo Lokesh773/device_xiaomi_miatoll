@@ -44,6 +44,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     qcom.fmradio
 
+# NXP NFC (Q) dependencied
+PRODUCT_PACKAGES += \
+    libmetricslogger \
+    libhwbinder
+
 # AVB
 PRODUCT_PACKAGES += \
     q-gsi.avbpubkey \
